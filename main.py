@@ -6,12 +6,14 @@ from sensoren import Sensoren
 
 com = Communication("RPI", "192.168.2.156")
 sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
-water = Water(com)
+water = Water(com, sensoren)
 
 t_com = threading.Thread(target=com.server)
+t_sensoren = threading.Thread(target=sensoren.update_data)
 t_water = threading.Thread(target=water.main)
 
 if __name__ == '__main__':
     print("Starting")
     t_com.start()
+    t_sensoren.start()
     t_water.start()
