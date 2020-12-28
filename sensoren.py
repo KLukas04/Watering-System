@@ -19,7 +19,7 @@ class Sensoren:
         self.pinVent1 = pinVent1 # Ventil 1
         self.pinVent2 = pinVent2 # Ventil 2
 
-        setup_GPIO(self, pinTemp, pinHum, pinRain, pinVent1, pinVent2)
+        self.setup_GPIO(self, pinTemp, pinHum, pinRain, pinVent1, pinVent2)
 
     def setup_GPIO(self, pinTemp, pinHum, pinRain, pinVent1, pinVent2):
         GPIO.setmode(GPIO.BCM)
