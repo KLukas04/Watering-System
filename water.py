@@ -7,7 +7,7 @@ from communication import Communication
 
 class Water:
     def __init__(self, com):
-        print("Hello")
+        print("Water")
         self.sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
         self.com = com
 
