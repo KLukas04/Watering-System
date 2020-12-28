@@ -14,7 +14,7 @@ class Sensoren:
         ads = ADS.ADS1015(i2c)
         self.chan = AnalogIn(ads, ADS.P0)   #Feuchtesensor
 
-        self.tempSensor = find_temp_sensor()
+        self.tempSensor = self.find_temp_sensor()
 
         self.pinVent1 = pinVent1 # Ventil 1
         self.pinVent2 = pinVent2 # Ventil 2
