@@ -10,8 +10,8 @@ class Sensoren:
     def __init__(self, pinRain, pinVent1, pinVent2):
         self.pinRain = pinRain #Regensensor
 
-        self.i2c = busio.I2C(board.SCL, board.SDA) #ADS
-        self.ads = ADS.ADS1015(i2c)
+        i2c = busio.I2C(board.SCL, board.SDA) #ADS
+        ads = ADS.ADS1015(i2c)
         self.chan = AnalogIn(ads, ADS.P0)   #Feuchtesensor
 
         self.tempSensor = find_temp_sensor()
