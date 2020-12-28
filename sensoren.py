@@ -26,6 +26,7 @@ class Sensoren:
         GPIO.setup(pinVent1, GPIO.OUT, initial=1)
         GPIO.setup(pinVent2, GPIO.OUT, initial=1)
         GPIO.setup(pinRain, GPIO.IN)
+        
 
     def get_state_rain(self):
         return GPIO.input(self.pinRain)
@@ -34,7 +35,7 @@ class Sensoren:
     def get_humidity(self):
         zwischen_wert = 0
         i = 0
-        while i < 6000:
+        while i < 1:
             zwischen_wert += self.chan.value
             time.sleep(0.01)
             i += 1

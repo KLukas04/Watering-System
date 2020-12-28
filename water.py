@@ -6,9 +6,9 @@ from sensoren import Sensoren
 from communication import Communication
 
 class Water:
-    def __init__(self, com):
+    def __init__(self, com, sensoren):
         print("Water")
-        self.sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
+        self.sensoren = sensoren
         self.com = com
 
     def main(self):
@@ -16,22 +16,22 @@ class Water:
         #sensoren.setup_GPIO()
 
         while True:
+            print(self.com.get_isActive())
             while self.com.get_isActive():
-                state_rain = sensoren.get_state_rain()
+                state_rain = self.sensoren.get_state_rain()
                 now = datetime.datetime.today()
+                
+                if self.com.get_time_to_water() != None:
+                    if now.hour == self.com.get_time_to_water().hour and now.minute ==  self.com.get_time_to_water().minute and state_rain == 1 and self.com.get_isActive():
+                        print("Water now!")
 
-                if now.hour == self.com.get_time_to_water().hour and now.minute ==  self.com.get_time_to_water().minute and state_rain == 1 and self.com.get_isActive():
-                    print("Water now!")
+                        #message = "YES," + str(current_temperature) + "," + str(Sensor.get_humidity()
+                        #message = "On"
+                        #print(message)
+                        #dC.mqttClient.publish("ios/water_now", message)
+                        # !!! AUSLAGERN NACH DEVICE !!!
 
-                    #message = "YES," + str(current_temperature) + "," + str(Sensor.get_humidity()
-                    #message = "On"
-                    #print(message)
-                    #dC.mqttClient.publish("ios/water_now", message)
-                    # !!! AUSLAGERN NACH DEVICE !!!
-
-                    self.water_now(com.get_dauer())
-
-                time.sleep(0.01)
+                        self.water_now(com.get_dauer())
             if self.sensoren.find_temp_sensor() is not None:
                 current_temperature = self.sensoren.get_temperature()
                 print("System not active! Es sind momentan", current_temperature, "C. Der Boden hat eine Feuchte von", self.sensoren.get_humidity())

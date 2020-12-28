@@ -2,8 +2,10 @@ import threading
 from water import Water
 from communication import Communication
 from db import Connection
+from sensoren import Sensoren
 
 com = Communication("RPI", "192.168.2.156")
+sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
 water = Water(com)
 
 t_com = threading.Thread(target=com.server)
