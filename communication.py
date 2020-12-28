@@ -3,6 +3,7 @@ import datetime
 
 class Communication:
     def __init__(self, clientName, serverAddress):
+        print("Com")
         self.mqttClient = mqtt.Client(clientName)
         self.mqttClient.connect(serverAddress, 1883)
 
@@ -14,9 +15,9 @@ class Communication:
 
     def server(self):
         print("Thread1 activated")
-        self.mqttClient.on_connect = self.connectionStatus
-        self.mqttClient.on_message = self.messageDecoder
-        self.mqttClient.loop_forever()    
+        #self.mqttClient.on_connect = self.connectionStatus
+        #self.mqttClient.on_message = self.messageDecoder
+        #self.mqttClient.loop_forever()    
     
     def connectionStatus(self, client, userdata, flags, rc):
         print("Subscribe")

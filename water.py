@@ -6,9 +6,10 @@ from sensoren import Sensoren
 from communication import Communication
 
 class Water:
-    def __init__(self):
+    def __init__(self, com):
+        print("Hello")
         self.sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
-        self.com = Communication("RPI", "192.168.2.156")
+        self.com = com
 
     def main(self):
         print("Thread2 activated")
@@ -33,7 +34,7 @@ class Water:
                 time.sleep(0.01)
             if self.sensoren.find_temp_sensor() is not None:
                 current_temperature = self.sensoren.get_temperature()
-                print(i, "System not active! Es sind momentan", current_temperature, "C. Der Boden hat eine Feuchte von", self.sensoren.get_humidity())
+                print("System not active! Es sind momentan", current_temperature, "C. Der Boden hat eine Feuchte von", self.sensoren.get_humidity())
             else:
                 print("Temperatursensor nicht gefunden!!!")
 

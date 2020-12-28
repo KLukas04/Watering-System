@@ -42,7 +42,7 @@ class Sensoren:
 
         return humidity_value
 
-    def get_temperatur(self):
+    def get_temperature(self):
         location = '/sys/bus/w1/devices/' + self.tempSensor + '/w1_slave'
         tfile = open(location)
         text = tfile.read()

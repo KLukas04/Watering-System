@@ -4,7 +4,7 @@ from communication import Communication
 from db import Connection
 
 com = Communication("RPI", "192.168.2.156")
-water = Water()
+water = Water(com)
 
 t_com = threading.Thread(target= com.server())
 t_water = threading.Thread(target=water.main())
