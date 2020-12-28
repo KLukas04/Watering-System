@@ -26,13 +26,20 @@ class Sensoren:
         GPIO.setup(pinVent1, GPIO.OUT, initial=1)
         GPIO.setup(pinVent2, GPIO.OUT, initial=1)
         GPIO.setup(pinRain, GPIO.IN)
-        
 
-    def get_state_rain(self):
+    def update_data(self):
+         while True:
+             self.state_rain = set_state_rain()
+             self.temperature = set_temperature()
+             self.humidity = set_humidity()
+
+    def set_state_rain(self):
         return GPIO.input(self.pinRain)
 
+    def get_state_rain(self):
+        return self.state_rain
 
-    def get_humidity(self):
+    def set_humidity(self):
         zwischen_wert = 0
         i = 0
         while i < 1:
@@ -42,8 +49,11 @@ class Sensoren:
         humidity_value = round(zwischen_wert / 6000 / 1000, 2)
 
         return humidity_value
+    
+    def get_humidity(self):
+        return self.humidity
 
-    def get_temperature(self):
+    def set_temperature(self):
         location = '/sys/bus/w1/devices/' + self.tempSensor + '/w1_slave'
         tfile = open(location)
         text = tfile.read()
@@ -53,6 +63,9 @@ class Sensoren:
         temperature = float(temperaturedata[2:]) / 1000
 
         return temperature
+    
+    def get_temperature(self):
+        return self.temperature
 
     def get_pinRain(self):
         return self.pinRain
