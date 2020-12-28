@@ -11,5 +11,5 @@ t_water = threading.Thread(target=water.main())
 
 if __name__ == '__main__':
     print("Starting")
-    t_deviceCommunication.start()
-    t_bewässern.start()
+    t_com.start()
+    t_water.start()

@@ -14,8 +14,8 @@ class Communication:
 
     def server(self):
         print("Thread1 activated")
-        self.mqttClient.on_connect = connectionStatus
-        self.mqttClient.on_message = messageDecoder
+        self.mqttClient.on_connect = self.connectionStatus
+        self.mqttClient.on_message = self.messageDecoder
         self.mqttClient.loop_forever()    
     
     def connectionStatus(self, client, userdata, flags, rc):
@@ -54,7 +54,7 @@ class Communication:
         elif msg.topic == "duration":
             message_duration = str(msg.payload.decode(encoding='UTF-8'))
 
-            self.dauer = time_in_minutes(int(message_duration))
+            self.dauer = self.time_in_minutes(int(message_duration))
             print(dauer)
 
 
