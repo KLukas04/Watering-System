@@ -3,7 +3,7 @@ from water import Water
 from communication import Communication
 from db import Connection
 
-com = Communication()
+com = Communication("RPI", "192.168.2.156")
 water = Water()
 
 t_com = threading.Thread(target= com.server())

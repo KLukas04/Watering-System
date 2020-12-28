@@ -8,7 +8,7 @@ class Connection:
         self.myCursor = conn.cursor()
 
     def save_data():
-        sensoren = Sensoren()
+        sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
 
         temp = sensoren.get_temperatur()
         humidity = sensoren.get_humidity()

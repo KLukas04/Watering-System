@@ -7,8 +7,8 @@ from communication import Communication
 
 class Water:
     def __init__(self):
-        self.sensoren = Sensoren()
-        self.com = Communication()
+        self.sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
+        self.com = Communication("RPI", "192.168.2.156")
 
     def main(self):
         print("Thread2 activated")
