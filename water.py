@@ -28,7 +28,7 @@ class Water:
                     #dC.mqttClient.publish("ios/water_now", message)
                     # !!! AUSLAGERN NACH DEVICE !!!
 
-                    water_now(com.get_dauer())
+                    self.water_now(com.get_dauer())
 
                 time.sleep(0.01)
             if self.sensoren.find_temp_sensor() is not None:
@@ -41,22 +41,22 @@ class Water:
         print("water_now")
 
         print("System start on", self.sensoren.get_pinVent1())
-        control(self.sensoren.get_pinVent1(), self.com.get_dauer())
+        self.control(self.sensoren.get_pinVent1(), self.com.get_dauer())
         print("System over on", self.sensoren.get_pinVent1())
         
         print("System start on", self.sensoren.get_pinVent2())
-        control(self.sensoren.get_pinVent2(), self.com.get_dauer())
+        self.control(self.sensoren.get_pinVent2(), self.com.get_dauer())
         print("System over on", self.sensoren.get_pinVent2())
 
     def sleep_plus_control(self, pin, duration):
-        on(pin)
+        self.on(pin)
         print("Dauer:", duration)
         time_left = duration
         while time_left > 0 and self.com.get_isActive():
             time.sleep(15)
             time_left -= 15
             print(time_left)
-        off(pin)
+        self.off(pin)
 
     def on(pin):
         print("ON", pin)

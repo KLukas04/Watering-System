@@ -7,7 +7,7 @@ class Connection:
         self.conn = pymysql.connect(host, user, password, database) #hier vielleicht anderes
         self.myCursor = conn.cursor()
 
-    def save_data():
+    def save_data(self):
         sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
 
         temp = sensoren.get_temperatur()

@@ -62,7 +62,7 @@ class Sensoren:
     def get_pinVent2(self):
         return self.pinVent2
     
-    def find_temp_sensor():
+    def find_temp_sensor(self):
         temperatur_sensor = None
         for i in os.listdir('/sys/bus/w1/devices'):
             if i != 'w1_bus_master1':
