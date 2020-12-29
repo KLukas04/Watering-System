@@ -5,7 +5,7 @@ import pymysql
 app = Flask(__name__)
 api = Api(app)
 
-db = pymysql.connect(host="192.168.2.156", user="adminLukas", password="IbdtLmmB.11", database="sensor_data") 
+db = pymysql.connect(host="localhost", user="adminLukas", password="IbdtLmmB.11", database="sensor_data") 
 cursor = db.cursor()
 
 class SensorData(Resource):
@@ -14,8 +14,10 @@ class SensorData(Resource):
         try: 
             cursor.execute(sql)
             results = cursor.fetchall()
-            print(results)
-            return "Success"
+            temp = []
+            for result in results:
+                temp.append(result[0])
+            return {"temp": temp}
         except:
             print("Error")
             return "Success"
