@@ -13,6 +13,7 @@ struct AppView: View {
         TabView{
             ContentView()
                 .tabItem {
+                    Image(systemName: "home")
                     Text("Home")
                 }
             
