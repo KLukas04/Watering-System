@@ -13,12 +13,13 @@ struct AppView: View {
         TabView{
             ContentView()
                 .tabItem {
-                    Image(systemName: "home")
+                    Image(systemName: "house.fill")
                     Text("Home")
                 }
             
-            Sensor()
+            SensorData()
                 .tabItem {
+                    Image(systemName: "externaldrive.fill.badge.icloud")
                     Text("Data")
                 }
         }

@@ -9,37 +9,15 @@
 import SwiftUI
 import SwiftUICharts
 
-struct Sensor: View {
-    
-    @FetchRequest(entity: SensorData.entity(), sortDescriptors: []) var sensorData: FetchedResults<SensorData>
-    /*var disabled: Bool{
-        //sensorData.temperatur.isEmpty
-    }*/
-    @State private var temperatures: [Double] = []
-    
-    var body: some View {
-        VStack(spacing: 20){
-            /*List(sensorData, id: \.self){temp in
-                Text("\(temp.temperatur)")
-            }
-            //Text("")*/
-            LineView(data: temperatures, title: "Temperatur")
-                .padding()
-                .frame(height: 500, alignment: .center)
-                //.disabled(disabled)
-            //LineView(data: self.sensorData.soilmoisture, title: "Bodenfeuchte")
-            //.padding()
-        }.onAppear{
-            for temp in self.sensorData{
-                self.temperatures.append(temp.temperatur)
-            }
-        }
+struct SensorData: View {
+    var body: some View{
+        Text("Data")
     }
     
 }
 
 struct Sensor_Previews: PreviewProvider {
     static var previews: some View {
-        Sensor()
+        SensorData()
     }
 }
