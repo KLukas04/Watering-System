@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		801E0C7124B0F78000FC3DAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E0C7024B0F78000FC3DAC /* AppDelegate.swift */; };
+		801E0C7324B0F78000FC3DAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E0C7224B0F78000FC3DAC /* SceneDelegate.swift */; };
+		801E0C7524B0F78000FC3DAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E0C7424B0F78000FC3DAC /* ContentView.swift */; };
+		801E0C7724B0F78A00FC3DAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801E0C7624B0F78A00FC3DAC /* Assets.xcassets */; };
+		801E0C7A24B0F78A00FC3DAC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801E0C7924B0F78A00FC3DAC /* Preview Assets.xcassets */; };
+		801E0C7D24B0F78A00FC3DAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801E0C7B24B0F78A00FC3DAC /* LaunchScreen.storyboard */; };
+		801E0C8524DACAB600FC3DAC /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E0C8424DACAB600FC3DAC /* AppView.swift */; };
+		801E0C8724DACBD900FC3DAC /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E0C8624DACBD900FC3DAC /* Sensor.swift */; };
+		801E0C8A24DAD3A500FC3DAC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 801E0C8924DAD3A500FC3DAC /* SwiftUICharts */; };
+		803F29C524DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 803F29C324DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld */; };
+		D408D38F32E18C98FDCF0BE1 /* Pods_RaspberryPiControle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7446885E679B06F2F53C7C /* Pods_RaspberryPiControle.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05EF9492D9EB18CE2A0B28EC /* Pods-RaspberryPiControle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryPiControle.release.xcconfig"; path = "Target Support Files/Pods-RaspberryPiControle/Pods-RaspberryPiControle.release.xcconfig"; sourceTree = "<group>"; };
+		0C7446885E679B06F2F53C7C /* Pods_RaspberryPiControle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaspberryPiControle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F156E661CF643385C42768 /* Pods-RaspberryPiControle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaspberryPiControle.debug.xcconfig"; path = "Target Support Files/Pods-RaspberryPiControle/Pods-RaspberryPiControle.debug.xcconfig"; sourceTree = "<group>"; };
+		801E0C6D24B0F78000FC3DAC /* RaspberryPiControle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaspberryPiControle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		801E0C7024B0F78000FC3DAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		801E0C7224B0F78000FC3DAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		801E0C7424B0F78000FC3DAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		801E0C7624B0F78A00FC3DAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		801E0C7924B0F78A00FC3DAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		801E0C7C24B0F78A00FC3DAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		801E0C7E24B0F78A00FC3DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		801E0C8424DACAB600FC3DAC /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		801E0C8624DACBD900FC3DAC /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		803F29C424DF14F000AC8525 /* RaspberryPiControle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RaspberryPiControle.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		801E0C6A24B0F78000FC3DAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D408D38F32E18C98FDCF0BE1 /* Pods_RaspberryPiControle.framework in Frameworks */,
+				801E0C8A24DAD3A500FC3DAC /* SwiftUICharts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		479BE06946697D999BDDF3FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37F156E661CF643385C42768 /* Pods-RaspberryPiControle.debug.xcconfig */,
+				05EF9492D9EB18CE2A0B28EC /* Pods-RaspberryPiControle.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		801E0C6424B0F77F00FC3DAC = {
+			isa = PBXGroup;
+			children = (
+				801E0C6F24B0F78000FC3DAC /* RaspberryPiControle */,
+				801E0C6E24B0F78000FC3DAC /* Products */,
+				479BE06946697D999BDDF3FB /* Pods */,
+				9BCB378C6F62E64923AE1707 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		801E0C6E24B0F78000FC3DAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				801E0C6D24B0F78000FC3DAC /* RaspberryPiControle.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		801E0C6F24B0F78000FC3DAC /* RaspberryPiControle */ = {
+			isa = PBXGroup;
+			children = (
+				801E0C7024B0F78000FC3DAC /* AppDelegate.swift */,
+				801E0C7224B0F78000FC3DAC /* SceneDelegate.swift */,
+				801E0C8424DACAB600FC3DAC /* AppView.swift */,
+				801E0C7424B0F78000FC3DAC /* ContentView.swift */,
+				801E0C8624DACBD900FC3DAC /* Sensor.swift */,
+				801E0C7624B0F78A00FC3DAC /* Assets.xcassets */,
+				801E0C7B24B0F78A00FC3DAC /* LaunchScreen.storyboard */,
+				801E0C7E24B0F78A00FC3DAC /* Info.plist */,
+				803F29C324DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld */,
+				801E0C7824B0F78A00FC3DAC /* Preview Content */,
+			);
+			path = RaspberryPiControle;
+			sourceTree = "<group>";
+		};
+		801E0C7824B0F78A00FC3DAC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				801E0C7924B0F78A00FC3DAC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BCB378C6F62E64923AE1707 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C7446885E679B06F2F53C7C /* Pods_RaspberryPiControle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		801E0C6C24B0F78000FC3DAC /* RaspberryPiControle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 801E0C8124B0F78A00FC3DAC /* Build configuration list for PBXNativeTarget "RaspberryPiControle" */;
+			buildPhases = (
+				4C1D817704334DEF4ACE9186 /* [CP] Check Pods Manifest.lock */,
+				801E0C6924B0F78000FC3DAC /* Sources */,
+				801E0C6A24B0F78000FC3DAC /* Frameworks */,
+				801E0C6B24B0F78000FC3DAC /* Resources */,
+				F75CE2F3D4EDD7FB9CBF874D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaspberryPiControle;
+			packageProductDependencies = (
+				801E0C8924DAD3A500FC3DAC /* SwiftUICharts */,
+			);
+			productName = RaspberryPiControle;
+			productReference = 801E0C6D24B0F78000FC3DAC /* RaspberryPiControle.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		801E0C6524B0F77F00FC3DAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1200;
+				ORGANIZATIONNAME = LukasKrinke;
+				TargetAttributes = {
+					801E0C6C24B0F78000FC3DAC = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 801E0C6824B0F78000FC3DAC /* Build configuration list for PBXProject "RaspberryPiControle" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 801E0C6424B0F77F00FC3DAC;
+			packageReferences = (
+				801E0C8824DAD3A500FC3DAC /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
+			productRefGroup = 801E0C6E24B0F78000FC3DAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				801E0C6C24B0F78000FC3DAC /* RaspberryPiControle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		801E0C6B24B0F78000FC3DAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801E0C7D24B0F78A00FC3DAC /* LaunchScreen.storyboard in Resources */,
+				801E0C7A24B0F78A00FC3DAC /* Preview Assets.xcassets in Resources */,
+				801E0C7724B0F78A00FC3DAC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C1D817704334DEF4ACE9186 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RaspberryPiControle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F75CE2F3D4EDD7FB9CBF874D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaspberryPiControle/Pods-RaspberryPiControle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RaspberryPiControle/Pods-RaspberryPiControle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RaspberryPiControle/Pods-RaspberryPiControle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		801E0C6924B0F78000FC3DAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				801E0C8524DACAB600FC3DAC /* AppView.swift in Sources */,
+				803F29C524DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld in Sources */,
+				801E0C8724DACBD900FC3DAC /* Sensor.swift in Sources */,
+				801E0C7124B0F78000FC3DAC /* AppDelegate.swift in Sources */,
+				801E0C7324B0F78000FC3DAC /* SceneDelegate.swift in Sources */,
+				801E0C7524B0F78000FC3DAC /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		801E0C7B24B0F78A00FC3DAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				801E0C7C24B0F78A00FC3DAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		801E0C7F24B0F78A00FC3DAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		801E0C8024B0F78A00FC3DAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		801E0C8224B0F78A00FC3DAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37F156E661CF643385C42768 /* Pods-RaspberryPiControle.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RaspberryPiControle/Preview Content\"";
+				DEVELOPMENT_TEAM = H95G2JPP2K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = RaspberryPiControle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.Krinke.Lukas.RaspberryPiControle2020;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		801E0C8324B0F78A00FC3DAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05EF9492D9EB18CE2A0B28EC /* Pods-RaspberryPiControle.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RaspberryPiControle/Preview Content\"";
+				DEVELOPMENT_TEAM = H95G2JPP2K;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = RaspberryPiControle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.Krinke.Lukas.RaspberryPiControle2020;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		801E0C6824B0F78000FC3DAC /* Build configuration list for PBXProject "RaspberryPiControle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801E0C7F24B0F78A00FC3DAC /* Debug */,
+				801E0C8024B0F78A00FC3DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		801E0C8124B0F78A00FC3DAC /* Build configuration list for PBXNativeTarget "RaspberryPiControle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				801E0C8224B0F78A00FC3DAC /* Debug */,
+				801E0C8324B0F78A00FC3DAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		801E0C8824DAD3A500FC3DAC /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		801E0C8924DAD3A500FC3DAC /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 801E0C8824DAD3A500FC3DAC /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		803F29C324DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				803F29C424DF14F000AC8525 /* RaspberryPiControle.xcdatamodel */,
+			);
+			currentVersion = 803F29C424DF14F000AC8525 /* RaspberryPiControle.xcdatamodel */;
+			path = RaspberryPiControle.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 801E0C6524B0F77F00FC3DAC /* Project object */;
+}
