@@ -12,31 +12,21 @@ class Water:
         self.com = com
 
     def main(self):
-        print("Thread2 activated")
-        #sensoren.setup_GPIO()
-
+        print("Thread3 activated")
         while True:
-            print(self.com.get_isActive())
             while self.com.get_isActive():
+                
                 state_rain = self.sensoren.get_state_rain()
                 now = datetime.datetime.today()
+                print(self.com.get_dauer())
                 
                 if self.com.get_time_to_water() != None:
                     if now.hour == self.com.get_time_to_water().hour and now.minute ==  self.com.get_time_to_water().minute and state_rain == 1 and self.com.get_isActive():
                         print("Water now!")
 
-                        #message = "YES," + str(current_temperature) + "," + str(Sensor.get_humidity()
-                        #message = "On"
-                        #print(message)
-                        #dC.mqttClient.publish("ios/water_now", message)
-                        # !!! AUSLAGERN NACH DEVICE !!!
+                        self.com.send_succes(temp=self.sensoren.get_temperature(), hum=self.sensoren.get_humidity())
 
-                        self.water_now(com.get_dauer())
-            if self.sensoren.find_temp_sensor() is not None:
-                current_temperature = self.sensoren.get_temperature()
-                print("System not active! Es sind momentan", current_temperature, "C. Der Boden hat eine Feuchte von", self.sensoren.get_humidity())
-            else:
-                print("Temperatursensor nicht gefunden!!!")
+                        self.water_now(self.com.get_dauer())
 
     def water_now(self, dauer):
         print("water_now")
@@ -49,7 +39,7 @@ class Water:
         self.control(self.sensoren.get_pinVent2(), self.com.get_dauer())
         print("System over on", self.sensoren.get_pinVent2())
 
-    def sleep_plus_control(self, pin, duration):
+    def control(self, pin, duration):
         self.on(pin)
         print("Dauer:", duration)
         time_left = duration
@@ -59,10 +49,10 @@ class Water:
             print(time_left)
         self.off(pin)
 
-    def on(pin):
+    def on(self, pin):
         print("ON", pin)
         GPIO.output(pin, GPIO.LOW)
 
-    def off(pin):
+    def off(self, pin):
         print("OFF", pin)
         GPIO.output(pin, GPIO.HIGH)

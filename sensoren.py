@@ -20,6 +20,10 @@ class Sensoren:
         self.pinVent2 = pinVent2 # Ventil 2
 
         self.setup_GPIO(pinRain, pinVent1, pinVent2)
+        
+        self.state_rain = self.set_state_rain()
+        self.temperature = self.set_temperature()
+        self.humidity = self.set_humidity(1)
 
     def setup_GPIO(self, pinRain, pinVent1, pinVent2):
         GPIO.setmode(GPIO.BCM)
@@ -28,10 +32,12 @@ class Sensoren:
         GPIO.setup(pinRain, GPIO.IN)
 
     def update_data(self):
-         while True:
-             self.state_rain = set_state_rain()
-             self.temperature = set_temperature()
-             self.humidity = set_humidity()
+        print("Thread2 activated")
+        while True:     
+            self.state_rain = self.set_state_rain()
+            self.temperature = self.set_temperature()
+            self.humidity = self.set_humidity(6000)
+            time.sleep(240)
 
     def set_state_rain(self):
         return GPIO.input(self.pinRain)
@@ -39,15 +45,17 @@ class Sensoren:
     def get_state_rain(self):
         return self.state_rain
 
-    def set_humidity(self):
+    def set_humidity(self, accuracy):
         zwischen_wert = 0
         i = 0
-        while i < 1:
+        while i < accuracy:
+            print(i)
             zwischen_wert += self.chan.value
             time.sleep(0.01)
             i += 1
-        humidity_value = round(zwischen_wert / 6000 / 1000, 2)
-
+        humidity_value = round(zwischen_wert / accuracy / 1000, 2)
+        
+        print(humidity_value)
         return humidity_value
     
     def get_humidity(self):

@@ -34,9 +34,10 @@ class Communication:
             message_time = str(msg.payload.decode(encoding='UTF-8'))
             times = message_time.split(':')
 
-            self.stunde = int(times[0])
-            self.minute = int(times[1])
-
+            stunde = int(times[0])
+            minute = int(times[1])
+            
+            print(f"Stunde: {stunde}, Minute: {minute}")
             self.time_to_water = datetime.time(stunde, minute, 0)
             print(time_to_water)
 
@@ -54,10 +55,17 @@ class Communication:
 
         elif msg.topic == "duration":
             message_duration = str(msg.payload.decode(encoding='UTF-8'))
-
-            self.dauer = self.time_in_minutes(int(message_duration))
-            print(dauer)
-
+            print("Hallo")
+            d = int(message_duration)
+            print(d)
+            x = d * 60
+            print(x)
+            self.dauer = x
+            print(self.dauer)
+    def send_succes(self, temp, hum):
+        message = "YES," + str(temp) + "," + str(hum)
+        print(message)
+        self.mqttClient.publish("ios/water_now", message)
 
     def get_time_to_water(self):
         return self.time_to_water
@@ -68,8 +76,8 @@ class Communication:
 
 
     def get_dauer(self):
+        print(self.dauer)
         return self.dauer
-
 
     def time_in_minutes(duration):
         return duration * 60
