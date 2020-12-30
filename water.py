@@ -18,7 +18,6 @@ class Water:
                 
                 state_rain = self.sensoren.get_state_rain()
                 now = datetime.datetime.today()
-                print(self.com.get_dauer())
                 
                 if self.com.get_time_to_water() != None:
                     if now.hour == self.com.get_time_to_water().hour and now.minute ==  self.com.get_time_to_water().minute and state_rain == 1 and self.com.get_isActive():

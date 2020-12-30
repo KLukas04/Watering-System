@@ -55,13 +55,11 @@ class Communication:
 
         elif msg.topic == "duration":
             message_duration = str(msg.payload.decode(encoding='UTF-8'))
-            print("Hallo")
             d = int(message_duration)
-            print(d)
             x = d * 60
-            print(x)
             self.dauer = x
             print(self.dauer)
+            
     def send_succes(self, temp, hum):
         message = "YES," + str(temp) + "," + str(hum)
         print(message)
