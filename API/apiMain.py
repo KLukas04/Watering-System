@@ -14,11 +14,9 @@ class SensorData(Resource):
         try: 
             cursor.execute(sql)
             results = cursor.fetchall()
-            print(len(results))
             temp = [] # DatumUhrzeit geht momentan nict, da es nicht als JSON dirket geht
             for result in results:
                 temp.append(result[0])
-            print(len(results))
             return {"data": temp}
         except:
             print("Error")
