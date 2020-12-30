@@ -10,13 +10,15 @@ cursor = db.cursor()
 
 class SensorData(Resource):
     def get(self, sensor_id):
-        sql = f"SELECT {sensor_id} FROM SensorData"
+        sql = f"SELECT {sensor_id} FROM SensorData ORDER BY SensorData.DatumUhrzeit DESC LIMIT 576"
         try: 
             cursor.execute(sql)
             results = cursor.fetchall()
+            print(len(results))
             temp = [] # DatumUhrzeit geht momentan nict, da es nicht als JSON dirket geht
             for result in results:
                 temp.append(result[0])
+            print(len(results))
             return {"data": temp}
         except:
             print("Error")
