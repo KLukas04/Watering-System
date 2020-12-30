@@ -10,53 +10,54 @@ import SwiftUI
 import SwiftUICharts
 
 struct SensorData: View {
-    @State private var temperaturen = [Temperatur]()
+    let sensorData = [
+        "temp" : "Temperatur",
+        "hum" : "Feuchtigkeit",
+        "rain" : "Regen"
+    ]
+    @State private var data = [Data]()
+    @State private var selectedData = "temp"
     var body: some View{
-        
-        List(temperaturen){ temp in
-            Text("\(temp.Temperatur)")
-        }
-        .onAppear{
-            getJSONTemperatur{ (temp) in
-                temperaturen = temp
+        NavigationView{
+            VStack{
+                Picker(selection: $selectedData, label: Text("Select Data?")) {
+                    Text("Temperatur").tag("temp")
+                    Text("Feuchtigkeit").tag("hum")
+                    Text("Regen").tag("rain")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.top, 10)
+                
+                /*List(data){ temp in
+                    Text("\(temp.data)")
+                }*/
+                
+                LineView(data: getValues(data: data), title: sensorData[selectedData], legend: "Gesamter Zeitraum")
+                    .padding()
+                
+            }
+            .navigationTitle("Sensordaten")
+            .onAppear{
+                ApiCaller.shared.getJSON(key: sensorData[selectedData]!) { (temp) in
+                    data = temp
+                }
+            }
+            .onChange(of: selectedData) { (new) in
+                ApiCaller.shared.getJSON(key: sensorData[new]!) { (temp) in
+                    data = temp
+                }
             }
         }
     }
     
-    func getJSONTemperatur(completion: @escaping ([Temperatur]) -> ()){
-        let urlString = "http://192.168.2.156:5000/alldata/Temperatur"
+    func getValues(data: [Data]) -> [Double]{
+        var values = [Double]()
         
-        if let url = URL(string: urlString){
-            URLSession.shared.dataTask(with: url){ data, res, err in
-                if let data = data{
-                    print("hey")
-                    
-                    let decoder = JSONDecoder()
-                    if let json = try? decoder.decode(Response.self, from: data){
-                        var temperaturen = [Temperatur]()
-                        for temp in json.Temperatur{
-                            let temperature = Temperatur(Temperatur: temp)
-                            temperaturen.append(temperature)
-                        }
-                        completion(temperaturen)
-                    }else{
-                        print("Cant decode")
-                    }
-                }
-            }.resume()
-        }else{
-            print("Error")
+        for value in data{
+            values.append(value.data)
         }
+        return values
     }
-    
-}
-
-struct Response: Codable {
-    let Temperatur: [Double]
-}
-struct Temperatur: Codable, Identifiable{
-    let id = UUID()
-    let Temperatur: Double
 }
 
 
