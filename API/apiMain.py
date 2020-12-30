@@ -17,7 +17,7 @@ class SensorData(Resource):
             temp = [] # DatumUhrzeit geht momentan nict, da es nicht als JSON dirket geht
             for result in results:
                 temp.append(result[0])
-            return {f"{sensor_id}": temp}
+            return {"data": temp}
         except:
             print("Error")
             return "Error"
