@@ -20,9 +20,9 @@ class SensorData(Resource):
             return {f"{sensor_id}": temp}
         except:
             print("Error")
-            return "Success"
+            return "Error"
 
 api.add_resource(SensorData, "/alldata/<string:sensor_id>")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
