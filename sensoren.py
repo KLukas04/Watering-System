@@ -40,6 +40,7 @@ class Sensoren:
             time.sleep(240)
 
     def set_state_rain(self):
+        print("Rain: " + str(GPIO.input(self.pinRain)))
         return GPIO.input(self.pinRain)
 
     def get_state_rain(self):
@@ -49,13 +50,12 @@ class Sensoren:
         zwischen_wert = 0
         i = 0
         while i < accuracy:
-            print(i)
             zwischen_wert += self.chan.value
             time.sleep(0.01)
             i += 1
         humidity_value = round(zwischen_wert / accuracy / 1000, 2)
         
-        print(humidity_value)
+        print("Feuchtigkeit: " + str(humidity_value))
         return humidity_value
     
     def get_humidity(self):
@@ -69,7 +69,8 @@ class Sensoren:
         secondline = text.split("\n")[1]
         temperaturedata = secondline.split(" ")[9]
         temperature = float(temperaturedata[2:]) / 1000
-
+        
+        print("Temperatur: " + str(temperature))
         return temperature
     
     def get_temperature(self):
