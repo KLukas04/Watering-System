@@ -1,7 +1,7 @@
 import os
 import board
 import busio
-import adafruit_ads1x15.ads1015 as ADS
+import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 import time
@@ -11,8 +11,9 @@ class Sensoren:
         self.pinRain = pinRain #Regensensor
 
         i2c = busio.I2C(board.SCL, board.SDA) #ADS
-        ads = ADS.ADS1015(i2c)
-        self.chan = AnalogIn(ads, ADS.P0)   #Feuchtesensor
+        ads = ADS.ADS1115(i2c)
+        ads.gain = 1
+        self.chan = AnalogIn(ads, ADS.P2) #Feuchtesensor
 
         self.tempSensor = self.find_temp_sensor()
 
@@ -36,7 +37,7 @@ class Sensoren:
         while True:     
             self.state_rain = self.set_state_rain()
             self.temperature = self.set_temperature()
-            self.humidity = self.set_humidity(6000)
+            self.humidity = self.set_humidity(120)
             time.sleep(240)
 
     def set_state_rain(self):
@@ -51,9 +52,9 @@ class Sensoren:
         i = 0
         while i < accuracy:
             zwischen_wert += self.chan.value
-            time.sleep(0.01)
+            time.sleep(1)
             i += 1
-        humidity_value = round(zwischen_wert / accuracy / 1000, 2)
+        humidity_value = round(zwischen_wert / i - 21000, 3)
         
         print("Feuchtigkeit: " + str(humidity_value))
         return humidity_value
@@ -91,3 +92,33 @@ class Sensoren:
             if i != 'w1_bus_master1':
                 temperatur_sensor = i
         return temperatur_sensor
+        
+    def test(self, accuracy):
+        zwischen_wert = 0
+        i = 0
+        while i < accuracy:
+            v = self.chan.value
+            i += 1
+            zwischen_wert += v
+            print(str(self.chan.value) + " | " + str(v) + " | " + str(zwischen_wert) + " | " + str(zwischen_wert/i))
+            time.sleep(1)
+        humidity_value = round(zwischen_wert / accuracy / 1000, 2)
+        
+        print("Feuchtigkeit: " + str(humidity_value))
+        return humidity_value
+
+if __name__ == '__main__':
+    # ~ s = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
+    # ~ while True:
+        # ~ print(s.test(120))
+        # ~ time.sleep(5)
+    while True:
+        i2c = busio.I2C(board.SCL, board.SDA) #ADS
+        ads = ADS.ADS1115(i2c)
+        ads.gain = 1
+        chan = AnalogIn(ads, ADS.P2)
+        
+        print(chan.value, chan.voltage)
+        time.sleep(5)
+    
+    
