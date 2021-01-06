@@ -10,6 +10,7 @@ cursor = db.cursor()
         
 class SensorData(Resource):
     def get(self, sensor_id):
+        db.commit()
         sql = f"SELECT {sensor_id} FROM SensorData ORDER BY SensorData.DatumUhrzeit DESC LIMIT 576"
         try: 
             cursor.execute(sql)
