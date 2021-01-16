@@ -34,7 +34,7 @@ class Connection: ObservableObject{
     init() {
         let clientID = "CocoaMQTT-" + String(ProcessInfo().processIdentifier)
         
-        serverAddress = reachability.connection == .wifi ? "192.168.2.156" : "84.191.197.229"
+        serverAddress = reachability.connection == .wifi ? "192.168.2.156" : "91.49.183.11"
         port = reachability.connection == .wifi ? 1883 : 2883
         
         mqttClient =  CocoaMQTT(clientID: clientID, host: serverAddress, port: UInt16(port))

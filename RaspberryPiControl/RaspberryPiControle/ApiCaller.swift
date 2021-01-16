@@ -6,12 +6,18 @@
 //
 
 import Foundation
+import Reachability
 
 class ApiCaller{
     static let shared = ApiCaller()
+    let reachability = try! Reachability()
     
     public func getJSON<T: Get>(key: String, completion: @escaping ([T]) -> ()){
-        let urlString = "http://192.168.2.156:5000/alldata/\(key)"
+        //let urlString = "http://192.168.2.156:5000/alldata/\(key)"
+        let serverAddress = reachability.connection == .wifi ? "192.168.2.156" : "91.49.183.11"
+        let port = reachability.connection == .wifi ? 1883 : 6789
+        
+        let urlString = "http://\(serverAddress):\(port)/alldata/\(key)"
 
         if let url = URL(string: urlString){
             URLSession.shared.dataTask(with: url){ data, res, err in
