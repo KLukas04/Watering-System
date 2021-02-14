@@ -55,9 +55,8 @@ class Communication:
 
         elif msg.topic == "duration":
             message_duration = str(msg.payload.decode(encoding='UTF-8'))
-            d = int(message_duration)
-            x = d * 60
-            self.dauer = x
+            d = float(message_duration)
+            self.dauer = d * 60.0
             print(self.dauer)
             
     def send_succes(self, temp, hum):
@@ -79,3 +78,6 @@ class Communication:
 
     def time_in_minutes(duration):
         return duration * 60
+    
+if __name__ == "__main__":
+    com = Communication("RPI","0.0.0.0")

@@ -5,7 +5,8 @@ from db import Connection
 from sensoren import Sensoren
 import time
 
-com = Communication("RPI", "192.168.2.156")
+#com = Communication("RPI", "192.168.2.156
+com = Communication("RPI", "0.0.0.0")
 sensoren = Sensoren(pinRain=22, pinVent1=17, pinVent2=27)
 water = Water(com, sensoren)
 
