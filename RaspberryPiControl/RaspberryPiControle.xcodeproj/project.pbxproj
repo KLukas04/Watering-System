@@ -17,8 +17,8 @@
 		801E0C8724DACBD900FC3DAC /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E0C8624DACBD900FC3DAC /* Sensor.swift */; };
 		801E0C8A24DAD3A500FC3DAC /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 801E0C8924DAD3A500FC3DAC /* SwiftUICharts */; };
 		802375B3259B82C6006DCA4E /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802375B2259B82C6006DCA4E /* Connection.swift */; };
-		802375BD259CC30C006DCA4E /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802375BC259CC30C006DCA4E /* ApiCaller.swift */; };
 		803F29C524DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 803F29C324DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld */; };
+		CCE99C2025F3FD1400903AC1 /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE99C1F25F3FD1400903AC1 /* ApiCaller.swift */; };
 		D408D38F32E18C98FDCF0BE1 /* Pods_RaspberryPiControle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7446885E679B06F2F53C7C /* Pods_RaspberryPiControle.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +37,8 @@
 		801E0C8424DACAB600FC3DAC /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		801E0C8624DACBD900FC3DAC /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		802375B2259B82C6006DCA4E /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		802375BC259CC30C006DCA4E /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ApiCaller.swift; path = "/Users/Lukas/Desktop/Watering-System/RaspberryPiControl/RaspberryPiControle/ApiCaller.swift"; sourceTree = "<absolute>"; };
 		803F29C424DF14F000AC8525 /* RaspberryPiControle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RaspberryPiControle.xcdatamodel; sourceTree = "<group>"; };
+		CCE99C1F25F3FD1400903AC1 /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +90,12 @@
 				801E0C7424B0F78000FC3DAC /* ContentView.swift */,
 				802375B2259B82C6006DCA4E /* Connection.swift */,
 				801E0C8624DACBD900FC3DAC /* Sensor.swift */,
-				802375BC259CC30C006DCA4E /* ApiCaller.swift */,
 				801E0C7624B0F78A00FC3DAC /* Assets.xcassets */,
 				801E0C7B24B0F78A00FC3DAC /* LaunchScreen.storyboard */,
 				801E0C7E24B0F78A00FC3DAC /* Info.plist */,
 				803F29C324DF14F000AC8525 /* RaspberryPiControle.xcdatamodeld */,
 				801E0C7824B0F78A00FC3DAC /* Preview Content */,
+				CCE99C1F25F3FD1400903AC1 /* ApiCaller.swift */,
 			);
 			path = RaspberryPiControle;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 				801E0C7124B0F78000FC3DAC /* AppDelegate.swift in Sources */,
 				801E0C7324B0F78000FC3DAC /* SceneDelegate.swift in Sources */,
 				801E0C7524B0F78000FC3DAC /* ContentView.swift in Sources */,
-				802375BD259CC30C006DCA4E /* ApiCaller.swift in Sources */,
+				CCE99C2025F3FD1400903AC1 /* ApiCaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

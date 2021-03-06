@@ -1,10 +1,9 @@
 //
 //  ApiCaller.swift
-//  
+//
 //
 //  Created by Lukas on 30.12.20.
 //
-
 import Foundation
 import Reachability
 
