@@ -72,7 +72,7 @@ struct ContentView: View {
                         Section(header: Text("Wie lange soll gesprent werden?")){
                             
                             TextField("Dauer", text: $con.duration)
-                                .keyboardType(.numberPad)
+                                .keyboardType(.decimalPad)
                                 .modifier(DismissingKeyboard())
                             
                             Button(action: {

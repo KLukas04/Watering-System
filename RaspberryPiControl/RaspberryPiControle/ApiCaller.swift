@@ -1,10 +1,9 @@
 //
 //  ApiCaller.swift
-//  
+//
 //
 //  Created by Lukas on 30.12.20.
 //
-
 import Foundation
 import Reachability
 
@@ -13,8 +12,7 @@ class ApiCaller{
     let reachability = try! Reachability()
     
     public func getJSON<T: Get>(key: String, completion: @escaping ([T]) -> ()){
-        //let urlString = "http://192.168.2.156:5000/alldata/\(key)"
-        let serverAddress = reachability.connection == .wifi ? "192.168.2.105" : "91.49.183.11"
+        let serverAddress = reachability.connection == .wifi ? "192.168.2.105" : "84.191.202.65"
         let port = reachability.connection == .wifi ? 5000 : 6789
         
         let urlString = "http://\(serverAddress):\(port)/alldata/\(key)"

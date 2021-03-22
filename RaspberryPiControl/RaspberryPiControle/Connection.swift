@@ -150,7 +150,8 @@ class Connection: ObservableObject{
     
     func sendDuration(duration: String){
         if isConnected{
-            mqttClient.publish("duration", withString: duration)
+            let d = duration.replacingOccurrences(of: ",", with: ".")
+            mqttClient.publish("duration", withString: d)
         }
     }
 }
